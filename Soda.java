@@ -3,23 +3,24 @@ public class Soda
 private int calories;
 private int intro;
 private String name; 
+private boolean caffeine;
 
-
-public Soda(String n, int c, int i)
+public Soda(String n, int c, int i, boolean b)
 {
 setName(n);
 setCalories(c);
 setIntro(i);
+setCaffeine(b);
 }
 
 public Soda()
 {
-  this("unknown",0,0);
+  this("unknown",0,0,true);
 }
 
 
 
-public int getName()
+public String getName()
 {
   return name;
 }
@@ -30,6 +31,10 @@ public int getCalories()
 public int getIntro()
 {
   return intro;
+}
+public boolean getCaffeine
+{
+  return caffeine;
 }
 
 public void setName(String n)
@@ -44,6 +49,10 @@ public void setIntro(int i)
 {
    intro=i;
 }
+public void setCaffeine(boolean b)
+{
+  caffeine=b;
+}
 
 public String randomize()
 {
@@ -56,11 +65,11 @@ public String randomize()
   return name;
   }
 
-  if(num==2);
+  if(num==2)
   {
-  this.setName("Sprite");
-    this.setCalories(192);
-    this.setIntro(1961);
+  setName("Sprite");
+    setCalories(192);
+    setIntro(1961);
   return name;
   }
 
