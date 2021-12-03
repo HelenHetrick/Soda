@@ -1,10 +1,13 @@
 public class Soda
 {
+  //This is my instance data. There are 4 and include 3 
+  //different variable tpes
 private int calories;
 private int intro;
 private String name; 
 private boolean caffeine;
 
+//These are my constructors-
 public Soda(String n, int c, int i, boolean b)
 {
 setName(n);
@@ -13,13 +16,14 @@ setIntro(i);
 setCaffeine(b);
 }
 
+//This is the default constructor
 public Soda()
 {
   this("unknown",0,0,true);
 }
 
 
-
+//These are the Accessor Methods for all of my instance data
 public String getName()
 {
   return name;
@@ -32,11 +36,12 @@ public int getIntro()
 {
   return intro;
 }
-public boolean getCaffeine
+public boolean getCaffeine()
 {
   return caffeine;
 }
 
+//These are my Mutator Methods for all of my instance data
 public void setName(String n)
 {
    name=n;
@@ -54,52 +59,63 @@ public void setCaffeine(boolean b)
   caffeine=b;
 }
 
-public String randomize()
+//This is an additional method that randomizes the kind of soda and sets the other values to the corresponding information about the soda. 
+public void randomize()
 {
-  double num=(1+(Math.random()*4));
-  if(num==1);
+  int num=(int)(1+(Math.random()*4));
+  if(num==1)
   {
-  this.setName("Rootbeer");
-  this.setCalories(152);
-  this.setIntro(1876);
-  return name;
+name="Rootbeer";
+calories=152;
+intro=1876;
+caffeine=false;
   }
 
-  if(num==2)
+else if(num==2)
   {
-  setName("Sprite");
-    setCalories(192);
-    setIntro(1961);
-  return name;
+name="Sprite";
+calories=192;
+intro=1961;
+caffeine=false;
   }
 
-  if(num==3);
+  else if(num==3)
   {
-  this.setName("Vernors");
-    this.setCalories(140); 
-     this.setIntro(1866);
-  return name;
+name="Vernors";
+calories=140;
+intro=1866;
+caffeine=false;
   }
 
-  if(num==4);
+ else if(num==4)
   {
-  this.setName("Coca-Cola");
-    this.setCalories(139);
-    this.setIntro(1886);
-  return name;
+name="Coca-Cola";
+calories=139;
+intro=1886;
+caffeine=true;
   }
 
-  if(num==5);
+else  if(num==5)
   {
-  this.setName("Pepsi");
-  this.setCalories(150);
-    this.setIntro(1896);
-  return name;
+name="Pepsi";
+calories=150;
+intro=1896;
+caffeine=true;
   }
+
+  return;
+}
+
+//This is an additional method to represent a change in the number of servings(or cans) drank by multipling the amount drank by the original number of calories
+public void totalCalories(int x)
+{
+calories=(calories*x);
+  return;
 }
 
 
-public boolean equals(Soda d)
+//This is the equals method to compare two sodas based on their name
+public  boolean equals(Soda d)
 {
   if(this.getName()==d.getName())
   {
@@ -111,10 +127,12 @@ public boolean equals(Soda d)
   }
 }
 
+//This toString Method prints all corresponding values of the soda.
 public String toString()
 {
-  return "Name: "+name+"\nCalories: "+calories+"\nYear Introduced: "+intro;
+  return "Name: "+name+"\nCalories: "+calories+"\nYear Introduced: "+intro+"\nContains caffeine:"+caffeine ;
 }
+
 
 
 }
